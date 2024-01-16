@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd"
+	xmlns:context="http://www.springframework.org/schema/context">
+	
+	<bean id="hw" class="com.demo.model.HelloSpring">
+	</bean>
+ 	<bean id="u1" class="com.demo.model.MyUser" scope="prototype">
+	   <property name="ud" value="11"></property>
+	   <property name="name" value="Kishori"></property>
+	</bean>
+	<bean id="u2" class="com.demo.model.MyUser">
+	   <property name="id" value="12"></property>
+	   <property name="name" value="Rajan"></property>
+	</bean>
+	<bean id="u3" class="com.demo.model.MyUser">
+	  <constructor-arg type="int" value="13"></constructor-arg>
+	  <constructor-arg index="1" value="Rajas"></constructor-arg>
+	</bean>
+	
+	 <context:annotation-config></context:annotation-config>
+    <context:component-scan base-package="com.demo"></context:component-scan>
+    <aop:aspectj-autoproxy></aop:aspectj-autoproxy>
+	
+</beans>
